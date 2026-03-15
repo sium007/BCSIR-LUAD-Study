@@ -13,7 +13,7 @@ The analysis is organized into the following steps:
 2.  **Visualization**: `02_Visualization_Volcano.R`
     - Generates volcano plots for visualizing differential expression results.
 3.  **Differential Methylation Analysis**: `03_Differential_Methylation_Analysis.R`
-    - Identifies differentially methylated CpG sites (DMCs) using `ChAMP`.
+    - Identifies differentially methylated CpG sites (DMCs) using `ChAMP`. Methylation preprocessing and DMP calling were performed using the ChAMP pipeline on IDAT files. Although the ChAMP workflow uses the IlluminaHumanMethylation450kanno.ilmn12.hg19 package for array-level compatibility, final CpG coordinate mapping and promoter assignment in the integrative analysis were performed separately using the hg38-based HM450_hg38_manifest_gencode_v36 annotation resource.
 4.  **Integration & Correlation**: `04_Integration_and_Correlation.R`
     - Performs Spearman correlation analysis between promoter methylation and lncRNA expression.
 5.  **Survival Analysis**: `05_Survival_Analysis_KaplanMeier.R`

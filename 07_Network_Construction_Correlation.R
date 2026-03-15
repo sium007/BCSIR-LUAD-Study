@@ -1,3 +1,12 @@
+# NOTE:
+# The ChAMP workflow was used here for IDAT import, preprocessing, normalization,
+# and differential methylation analysis.
+# The package `IlluminaHumanMethylation450kanno.ilmn12.hg19` is loaded for
+# compatibility with the ChAMP preprocessing framework.
+# However, the final CpG coordinate mapping and promoter assignment reported
+# in the manuscript were performed separately using the hg38-based annotation
+# resource `HM450_hg38_manifest_gencode_v36`.
+
 # Load required library
 if (!requireNamespace("Hmisc", quietly = TRUE)) install.packages("Hmisc")
 library(Hmisc)
@@ -29,5 +38,6 @@ for (i in 1:(ncol(correlation) - 1)) {
 
 # 4. Save results
 write.csv(results, "correlation_results.csv", row.names = FALSE)
+
 
 message("Network correlation analysis completed.")
